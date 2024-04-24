@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import styles from './NoMatch.module.css';
 import Box from '@mui/material/Box';
-import { useDataCustomHook } from '../../data/data';
+import { useDataCustomHook } from '../../Data/Data';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
