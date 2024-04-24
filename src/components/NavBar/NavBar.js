@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import AppBar from '@mui/material/AppBar';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -20,17 +20,12 @@ import DrawerTop from './DrawerTop'
 function NavBar() {
   const data = useDataCustomHook();
   const {navBar: {navs, name,}} = data;
-  const [open, setOpen] = useState(false)
-
-
-
-  console.log(navs)
+  const [open, setOpen] = useState(false);
 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'initial' }}}>
             {/* large Screen */}
             <Box  sx={{ display: { xs: 'none', sm: 'flex' }, mt: 1, alignItems: 'center' }} >
@@ -49,12 +44,11 @@ function NavBar() {
                   textDecoration: 'none',
                 }}
               >
-                 <Link to={'/'} style={{textDecoration: 'none', color: 'initial'}}>{name.toUpperCase()}</Link>
+                <Link to={'/'} style={{textDecoration: 'none', color: 'initial'}}>{name.toUpperCase()}</Link>
               </Typography>
-
             </Box>
 
-              {/* large screen menu */}
+            {/* large screen menu */}
             <Box sx={{ width: '100%', display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
               {navs.map((el) => el.ref  && 
               <Box 
@@ -88,13 +82,7 @@ function NavBar() {
               </Box>
               )}
             </Box>
-            
           </Box>
-
-
-
-
-
 
          {/* small Screen */}
          <Box sx={{ display: { xs: 'flex', sm: 'none' }, mr: 1, flexGrow: 1, justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
@@ -115,7 +103,8 @@ function NavBar() {
              <Link to={'/'} style={{textDecoration: 'none', color: 'initial'}}>{name.toUpperCase()}</Link>
           </Typography>
          </Box>
-              {/* small screen menu */}
+
+          {/* small screen menu */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
