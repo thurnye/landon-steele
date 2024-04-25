@@ -8,10 +8,8 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Tooltip from '@mui/material/Tooltip';
-import AdbIcon from '@mui/icons-material/Adb';
 import { useDataCustomHook } from '../../Data/Data';
 import DrawerTop from './DrawerTop'
-
 
 
 
@@ -23,20 +21,19 @@ function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="static">
+    <AppBar  sx={{background: {xs:'#fbfbfb', md:'white'}, boxShadow: 'none', color: '#726969', position: {xs: 'fixed', md: 'static'}}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'initial' }}}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'initial' }}}>
             {/* large Screen */}
-            <Box  sx={{ display: { xs: 'none', sm: 'flex' }, mt: 1, alignItems: 'center' }} >
-              <AdbIcon sx={{ display: { xs: 'none', sm: 'flex' }, mr: 1 }} />
+            <Box  sx={{ display: { xs: 'none', md: 'flex' }, mt: 1, alignItems: 'center' }} >
               <Typography
                 variant="h6"
                 noWrap
                 component="div"
                 sx={{
                   mr: 2,
-                  display: { xs: 'none', sm: 'flex' },
+                  display: { xs: 'none', md: 'flex' },
                   fontFamily: 'monospace',
                   fontWeight: 700,
                   letterSpacing: '.3rem',
@@ -49,7 +46,7 @@ function NavBar() {
             </Box>
 
             {/* large screen menu */}
-            <Box sx={{ width: '100%', display: { xs: 'none', sm: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
+            <Box sx={{ width: '100%', display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
               {navs.map((el) => el.ref  && 
               <Box 
               sx={{
@@ -85,8 +82,7 @@ function NavBar() {
           </Box>
 
          {/* small Screen */}
-         <Box sx={{ display: { xs: 'flex', sm: 'none' }, mr: 1, flexGrow: 1, justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-          <AdbIcon  />
+         <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, flexGrow: 1, justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
           <Typography
             variant="h5"
             noWrap
@@ -107,7 +103,7 @@ function NavBar() {
           {/* small screen menu */}
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip>
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="menu-items"

@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 const MediaIcon = (socialMedia) => socialMedia.map(el => 
-  <Button key={el.name} variant="text" startIcon={el.icon} href={el.path} sx={{textTransform: 'none', color: 'white'}}>
+  <Button key={el.name} variant="text" startIcon={el.icon} href={el.path} sx={{textTransform: 'none',}}>
 {el.name}
 </Button>)
 
@@ -19,10 +19,10 @@ const About = () => {
 
   return(
   <div className={styles.About}>
-    <Box sx={{ my: 5, background: '#312813', color: 'white'}}>
+    <Box sx={{ my: 5, background: '#F7F2E9',}}>
       <Typography variant="h5"  sx={{py: 4}}>{header}</Typography>
 
-      <Box sx={{background: '#312813', color: 'white',}}>
+      <Box sx={{background: '#F7F2E9',}}>
         <Box sx={{ flexGrow: 1, p: 2, display: {xs: 'none', md: 'block'}}}>
           <Grid 
           container 
@@ -62,13 +62,13 @@ const About = () => {
         </Box>
 
         {/* Small devices */}
-        <Box sx={{display: {xs: 'block', md: 'none'}, p: 3, mb: 8, background: '#312813', color: 'white'}}>
+        <Box sx={{display: {xs: 'block', md: 'none'}, p: 3, mb: 8, background: '#F7F2E9'}}>
           <Box sx={{float: 'left', width: '50%', mr: 3}}>
             <CardMedia
               component="img"
               sx={{ width: '100%', mx: 1 }}
               image={image}
-              alt="cacoa healer"
+              alt="about-me"
             />
           </Box>
           <Box>

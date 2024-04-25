@@ -17,6 +17,11 @@ export const useDataCustomHook = () => {
                 ref: 'true'
             },
             {
+                name: 'Testimonials',
+                path: '/#testimonials',
+                ref: 'true'
+            },
+            {
               name: 'Contact',
               path: '/#contact',
               ref: 'true'
@@ -121,6 +126,9 @@ export const useDataCustomHook = () => {
           buttonText:'Home',
           bgImg : ''
         },
+        Footer: {
+          header: 'Copyright'
+        }
     }
     return data;
 }

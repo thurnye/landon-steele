@@ -46,7 +46,7 @@ const Testimonials = () => {
           className=" owl-carousel owl-theme"   
           {...options}
           >  
-          {testimonials.map((el) => <Card sx={{ width: '100%', background: '#cecece' }}>
+          {testimonials.map((el) => <Card sx={{ width: '100%', background: '#fafafa' }}>
               <CardContent>
                 <CardHeader
                     avatar={

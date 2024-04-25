@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-
+import CustomizedButton from '../CustomizedButton/CustomizedButton'
 
 
 
@@ -80,7 +80,19 @@ const Contact = () => {
                 </Box>
                 <Box sx={{width: 250}}>
                 </Box>
-                  <Button variant="contained" sx={{width: 250, fontWeight: 700}}>Submit</Button>
+                  {/* // <Button variant="contained" sx={{width: 250, fontWeight: 700}}>Submit</Button> */}
+                  <CustomizedButton 
+                    variant="contained" 
+                    label={'Search'} 
+                    backgroundColor={'#000000'} 
+                    id="demo-customized-button"
+                    // aria-controls={open ? 'demo-customized-menu' : undefined}
+                    aria-haspopup="true"
+                    // aria-expanded={open ? 'true' : undefined}
+                    disableElevation
+                    // onClick={handleSearch}
+                    sx={{fontSize: {xs: 15, md: 18}, width: 250, fontWeight: 700}}
+                  />
               </form>
           </CardContent>
         </Card>

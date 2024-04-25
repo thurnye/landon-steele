@@ -4,14 +4,17 @@ import Box from '@mui/material/Box';
 import BackToTop from "./components/ScrollToTop/ScrollToTop";
 import Home from  './pages/Home/Home';
 import NoMatch from './pages/NoMatch/NoMatch';
-import NavBar from './components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar';
+import Toolbar from '@mui/material/Toolbar';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="back-to-top-anchor" >
       <NavBar/>
-       <Box sx={{ }}>
+       <Box sx={{ }} >
+       <Toolbar sx={{display: {xs: 'block', md: 'none'}}}/>
         <Routes>
           <Route path="/"  exact element={<Home/>} />
           <Route path="*" element={<NoMatch />} />
@@ -19,7 +22,7 @@ function App() {
       </Box>
       <BackToTop/>
       <div>
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     </div>
   );

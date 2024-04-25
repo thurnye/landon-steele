@@ -13,6 +13,8 @@ const Home = () => (
       <Jumbotron/>
       <div id="services">
         <Services/>
+      </div>
+      <div id="testimonials">
         <Testimonials/>
       </div>
       <div id="about">
