@@ -22,13 +22,13 @@ export const useDataCustomHook = () => {
                 ref: 'true'
             },
             {
-              name: 'Contact',
-              path: '/#contact',
+              name: 'About',
+              path: '/#about',
               ref: 'true'
             },
             {
-              name: 'About',
-              path: '/#about',
+              name: 'Contact',
+              path: '/#contact',
               ref: 'true'
             },
           ]
