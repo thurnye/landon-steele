@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Testimonals.module.css';
+import styles from './Testimonials.module.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -12,9 +12,10 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 
 
-const Testimonals = () => {
+
+const Testimonials = () => {
   const data = useDataCustomHook();
-  const {testimonies: {testimonies, header,}} = data;
+  const {testimonials: {testimonials, header,}} = data;
   const options = {
     loop: true,
     center: true,
@@ -37,7 +38,7 @@ const Testimonals = () => {
     }
 };
   return(
-  <div className={styles.Testimonals}>
+  <div className={styles.Testimonials}>
     <Box sx={{ my: 5}}>
       <Typography variant="h5"  sx={{py: 4}}>{header}</Typography>
        <Box class='container-fluid'>            
@@ -45,7 +46,7 @@ const Testimonals = () => {
           className=" owl-carousel owl-theme"   
           {...options}
           >  
-          {testimonies.map((el) => <Card sx={{ width: '100%', background: '#cecece' }}>
+          {testimonials.map((el) => <Card sx={{ width: '100%', background: '#cecece' }}>
               <CardContent>
                 <CardHeader
                     avatar={
@@ -65,4 +66,4 @@ const Testimonals = () => {
 
   </div>
 )};
-export default Testimonals;
+export default Testimonials;

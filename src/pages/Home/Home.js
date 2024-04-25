@@ -5,20 +5,20 @@ import About from '../../components/About/About'
 import Services from '../../components/Services/Services'
 import Contact from '../../components/Contact/Contact'
 import Jumbotron from '../../components/Jumbotron/Jumbotron'
-import Testimonals from '../../components/Testimonals/Testimonals'
+import Testimonials from '../../components/Testimonials/Testimonials'
 
 const Home = () => (
   <div className={styles.Home}>
     <Container maxWidth={'lg'}>
       <Jumbotron/>
-      <div id="#services">
+      <div id="services">
         <Services/>
-        <Testimonals/>
+        <Testimonials/>
       </div>
-      <div id="#about">
+      <div id="about">
         <About/>
       </div>
-      <div id="#contact">
+      <div id="contact">
         <Contact/>
       </div>
     </Container>

@@ -10,20 +10,20 @@ export const useDataCustomHook = () => {
             {
               name:  'home',
               path: '/',
-          },
-            {
-              name: 'About',
-              path: '/#about',
-              ref: 'true'
             },
             {
-              name: 'Services',
-              path: '/#services',
-              ref: 'true'
+                name: 'Services',
+                path: '/#services',
+                ref: 'true'
             },
             {
               name: 'Contact',
               path: '/#contact',
+              ref: 'true'
+            },
+            {
+              name: 'About',
+              path: '/#about',
               ref: 'true'
             },
           ]
@@ -62,9 +62,9 @@ export const useDataCustomHook = () => {
             }
           ]
         },
-        testimonies: {
-          header: 'TESTIMONIES',
-          testimonies: [
+        testimonials: {
+          header: 'TESTIMONIALS',
+          testimonials: [
             {
               name: 'Lorem Ipsum',
               image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODIwNDd8MHwxfHNlYXJjaHw4fHxyZWNpcGV8ZW58MHx8fHwxNzEzNzUxNDU4fDA&ixlib=rb-4.0.3&q=80&w=400',
@@ -113,7 +113,7 @@ export const useDataCustomHook = () => {
           ]
         },
         contact: {
-          header: 'Contact'
+          header: 'CONTACT US'
         },
         noMatchPage: {
           header: "The Page You Requested Could Not Be Found",
