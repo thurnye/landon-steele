@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
+import colors from '../../assets/colors/colors'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -46,7 +47,7 @@ export default function BackToTop(props) {
   return (
     <React.Fragment>
       <ScrollTop {...props}>
-        <Fab size="small" aria-label="scroll back to top">
+        <Fab size="small" aria-label="scroll back to top" sx={{background: colors.accent500 }}>
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

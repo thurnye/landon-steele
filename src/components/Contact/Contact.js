@@ -1,25 +1,30 @@
 import React from 'react';
 import styles from './Contact.module.css';
 import { useDataCustomHook } from '../../Data/Data';
-import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import CustomizedButton from '../CustomizedButton/CustomizedButton'
 import HeaderTitle from '../HeaderTitle/HeaderTitle';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import colors from '../../assets/colors/colors'
+import FormHeader from '../HeaderTitle/FormHeader'
 
 
 const Contact = () => {
   const data = useDataCustomHook();
-  const {contact: {header, btnName}} = data;
+  const {contact: {header, btnName, iamOptions, seriesOptions}} = data;
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
   
   return(
   <div className={styles.Contact}>
-      <Box sx={{ background: '#f4f9fb', p: 4}}>
+      <Box sx={{ background: colors.primaryBlue100, p: 4}}>
         <HeaderTitle>{header}</HeaderTitle>
         <Card sx={{m: 'auto', my: 5, maxWidth: 650,  }}>
           <CardContent>
@@ -28,23 +33,24 @@ const Contact = () => {
                 <Box sx={{
                   display: 'flex', 
                   justifyContent: {xs: 'center', md: 'start'}, 
-                  alignItems: {xs: 'start', md: 'center'},
-                  flexDirection: {xs: 'column', md: 'row'},
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
                   my: 4
                   }}>
-                  <Typography variant="body1"  sx={{mr: {md: 4}, textAlign: {xs: 'start', md: 'center'}, width: 150}}>Full Name</Typography>
+                  <FormHeader>Full Name</FormHeader>
                   <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
                 </Box>
+               
 
                 {/* Email */}
                 <Box sx={{
                   display: 'flex', 
                   justifyContent: {xs: 'center', md: 'start'}, 
-                  alignItems: {xs: 'start', md: 'center'},
-                  flexDirection: {xs: 'column', md: 'row'},
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
                   mb: 4
                   }}>
-                  <Typography variant="body1"  sx={{mr: {md: 4}, textAlign: {xs: 'start', md: 'center'}, width: 150}}>Email</Typography>
+                  <FormHeader>Email</FormHeader>
                   <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
                 </Box>
 
@@ -52,46 +58,102 @@ const Contact = () => {
                 <Box sx={{
                   display: 'flex', 
                   justifyContent: {xs: 'center', md: 'start'}, 
-                  alignItems: {xs: 'start', md: 'center'},
-                  flexDirection: {xs: 'column', md: 'row'},
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
                   mb: 4
                   }}>
-                  <Typography variant="body1"  sx={{mr: {md: 4}, textAlign: {xs: 'start', md: 'center'}, width: 150}}>Phone</Typography>
+                  <FormHeader>CellPhone</FormHeader>
                   <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
+                </Box>
+
+                {/* Company Name */}
+                <Box sx={{
+                  display: 'flex', 
+                  justifyContent: {xs: 'center', md: 'start'}, 
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
+                  my: 4
+                  }}>
+                  <FormHeader>Company Name</FormHeader>
+                  <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
+                </Box>
+                {/* I am a */}
+                <Box sx={{
+                  flexGrow: 1,
+                  display: 'flex', 
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
+                  my: 4
+                  }}>
+                  <FormHeader>I am a</FormHeader>
+                  <Select
+                    labelId="I-am-a-select-label"
+                    id="I-am-a-simple-select"
+                    value={age}
+                    size={'small'}
+                    onChange={handleChange}
+                    sx={{
+                      flexGrow: 1,
+                      width: '100%'
+                    }}
+                  >
+                    {iamOptions.map((el) => <MenuItem key={el} value={el.value}>{el.label}</MenuItem>)}
+                  </Select>
+                </Box>
+
+                {/* Series */}
+                <Box sx={{
+                  display: 'flex', 
+                  justifyContent: {xs: 'center', md: 'start'}, 
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
+                  my: 4
+                  }}>
+                  <FormHeader>Reaching out regarding a startup in series</FormHeader>
+                  <Select
+                    labelId="series-select-label"
+                    id="series-select"
+                    value={age}
+                    size={'small'}
+                    onChange={handleChange}
+                    sx={{
+                      flexGrow: 1,
+                      width: '100%'
+                    }}
+                  >
+                    {seriesOptions.map((el) => <MenuItem key={el} value={el.value}>{el.label}</MenuItem>)}
+                  </Select>
                 </Box>
 
                 {/* message */}
                 <Box sx={{
                   display: 'flex', 
                   justifyContent: {xs: 'center', md: 'start'}, 
-                  alignItems: {xs: 'start', md: 'center'},
-                  flexDirection: {xs: 'column', md: 'row'},
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
                   mb: 4
                   }}>
-                  <Typography variant="body1"  sx={{mr: {md: 4}, textAlign: {xs: 'start', md: 'center'}, width: 150}}>Message</Typography>
+                  <FormHeader>Please describe your situation in details</FormHeader>
                   <TextField 
                     fullWidth 
                     id="outlined-basic" 
                     variant="outlined" 
                     size="small"
                     multiline
-                    rows={5}
+                    rows={10}
                   />
                 </Box>
                 <Box sx={{width: 250}}>
                 </Box>
-                  {/* // <Button variant="contained" sx={{width: 250, fontWeight: 700}}>Submit</Button> */}
                   <CustomizedButton 
                     variant="contained" 
                     label={btnName} 
-                    backgroundColor={'#000000'} 
+                    backgroundColor={colors.accent500} 
                     id="demo-customized-button"
-                    // aria-controls={open ? 'demo-customized-menu' : undefined}
                     aria-haspopup="true"
-                    // aria-expanded={open ? 'true' : undefined}
                     disableElevation
                     // onClick={handleSearch}
-                    sx={{fontSize: {xs: 15, md: 18}, width: 250, fontWeight: 700}}
+                    sx={{fontSize: {xs: 18, md: 20}, width: 250, fontWeight: 700,  fontFamily: `Barlow Condensed, sans-serif`,}}
                   />
               </form>
           </CardContent>

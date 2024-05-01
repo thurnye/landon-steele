@@ -97,7 +97,63 @@ export const useDataCustomHook = () => {
         },
         contact: {
           header: 'CONTACT US',
-          btnName: 'Contact Us'
+          btnName: 'Contact Us',
+          iamOptions: [
+            {
+              label: 'Founder',
+              value: 'Founder'
+            },
+            {
+              label: 'Incubator',
+              value: 'Incubator'
+            },
+            {
+              label: 'Startup-Affiliated Organization',
+              value: 'Startup-Affiliated Organization'
+            },
+            {
+              label: 'Independent Consultant',
+              value: 'Independent Consultant'
+            },
+            {
+              label: 'Board Member',
+              value: 'Board Member'
+            },
+            {
+              label: 'Other',
+              value: 'Other'
+            },
+          ],
+          seriesOptions: [
+            {
+              label: 'A',
+              value: 'A'
+            },
+            {
+              label: 'B',
+              value: 'B'
+            },
+            {
+              label: 'C',
+              value: 'C'
+            },
+            {
+              label: 'D',
+              value: 'D'
+            },
+            {
+              label: 'E',
+              value: 'E'
+            },
+            {
+              label: 'Pre-Seed',
+              value: 'Pre-Seed'
+            },
+            {
+              label: 'Other',
+              value: 'Other'
+            }
+          ]
         },
         noMatchPage: {
           header: "The Page You Requested Could Not Be Found",

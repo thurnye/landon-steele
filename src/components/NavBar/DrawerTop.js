@@ -8,6 +8,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+import colors from '../../assets/colors/colors'
 
 const Puller = styled('div')(({ theme }) => ({
   width: 150,
@@ -46,7 +47,9 @@ export default function DrawerTop({open, setOpen, items}) {
                     <ListItemButton
                     onClick={() => setOpen(!open)}
                     onKeyDown={() => setOpen(!open)} 
-                    sx={{width: 250, textAlign: 'center', display: 'block'}}
+                    sx={{width: 250, textAlign: 'center', display: 'block', '&:hover': {
+                      color: colors.accent500, 
+                  }}}
                     >
                       {el.ref ? 
                       <Typography
@@ -57,11 +60,12 @@ export default function DrawerTop({open, setOpen, items}) {
                         href={el.path}
                         sx={{
                           mr: 2,
-                          fontFamily: 'monospace',
+                          fontFamily: `Barlow Condensed, sans-serif`,
                           fontWeight: 700,
                           letterSpacing: '.3rem',
                           color: 'inherit',
                           textDecoration: 'none',
+                          
                         }}
                       >
                         {el.name}

@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import { useDataCustomHook } from '../../Data/Data';
 import colors from '../../assets/colors/colors';
 import HeaderTitle from '../HeaderTitle/HeaderTitle';
+import HeaderSubTitle from '../HeaderTitle/HeaderSubTitle';
 
 
 const Services = () => {
@@ -30,11 +31,9 @@ const Services = () => {
                 image={service.image}
                 title={`${service.name}`}
               />
-              <CardContent sx={{height: {md: '25vh', lg: '20vh'}}}>
-                <Typography gutterBottom variant="h5" component="div">
-                 {service.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
+              <CardContent sx={{height: '100%'}}>
+                <HeaderSubTitle>{service.name}</HeaderSubTitle>
+                <Typography variant="body2" color="text.secondary" sx={{textAlign: 'start'}}>
                 {service.description}
                 </Typography>
               </CardContent>

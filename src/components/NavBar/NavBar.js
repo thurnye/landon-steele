@@ -11,6 +11,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { useDataCustomHook } from '../../Data/Data';
 import DrawerTop from './DrawerTop'
 import CardMedia from '@mui/material/CardMedia';
+import colors from '../../assets/colors/colors'
 
 
 
@@ -57,11 +58,14 @@ function NavBar() {
                 href={el.path}
                 sx={{
                   mr: 2,
-                  fontFamily: 'monospace',
+                  fontFamily: `Barlow Condensed, sans-serif`,
                   fontWeight: 700,
-                  letterSpacing: '.3rem',
+                  letterSpacing: '.2rem',
                   color: 'inherit',
                   textDecoration: 'none',
+                  '&:hover': {
+                    color: colors.accent500, 
+                }
                 }}
               >
                  {el.name}

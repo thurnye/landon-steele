@@ -9,7 +9,7 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
 import HeaderTitle from '../HeaderTitle/HeaderTitle';
-
+import colors from '../../assets/colors/colors'
 
 
 
@@ -28,7 +28,7 @@ const Testimonials = () => {
             <Grid item xs={4} sm={8} md={6} key={el.name}>
               <Card sx={{  
                 width: 350, m: 'auto', 
-                background: '#fafafa', 
+                background: colors.primaryGrey200, 
                 height: '100%', 
                 mb: {xs:4, md: 'initial' }
                 }}>
@@ -38,7 +38,11 @@ const Testimonials = () => {
                       <Avatar alt={el.name} src={el.image}/>
                     }
                     title={el.name}
-                    subheader="September 14, 2016"
+                    // subheader="September 14, 2016"
+                    sx={{
+                      color: colors.accent500,
+                      fontFamily: 'fontFamily: `Barlow Condensed, sans-serif`,'
+                    }}
                   />
                   <Box>
                     <Typography variant="body2" color="text.secondary" sx={{textAlign: 'start'}}>
