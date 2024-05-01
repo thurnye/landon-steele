@@ -1,6 +1,6 @@
 import { FaLinkedin } from "react-icons/fa6";
 import logo from '../assets/images/logo.png'
-import landon from '../assets/images/landon.jpeg'
+import landon from '../assets/images/landon.png'
 import { BsTwitterX } from "react-icons/bs";
 
 export const useDataCustomHook = () => {
