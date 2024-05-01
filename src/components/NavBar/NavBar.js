@@ -10,14 +10,14 @@ import Container from '@mui/material/Container';
 import Tooltip from '@mui/material/Tooltip';
 import { useDataCustomHook } from '../../Data/Data';
 import DrawerTop from './DrawerTop'
-
+import CardMedia from '@mui/material/CardMedia';
 
 
 
 
 function NavBar() {
   const data = useDataCustomHook();
-  const {navBar: {navs, name,}} = data;
+  const {navBar: {navs, name, logo}} = data;
   const [open, setOpen] = useState(false);
 
   return (
@@ -27,22 +27,15 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'initial' }}}>
             {/* large Screen */}
             <Box  sx={{ display: { xs: 'none', md: 'flex' }, mt: 1, alignItems: 'center' }} >
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{
-                  mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
-                }}
-              >
-                <Link to={'/'} style={{textDecoration: 'none', color: 'initial'}}>{name.toUpperCase()}</Link>
-              </Typography>
+             <Link to="/">
+              <CardMedia
+                  component="img"
+                  height="70"
+                  image={logo}
+                  alt="steele consulting"
+                />
+              </Link>
+
             </Box>
 
             {/* large screen menu */}
@@ -83,21 +76,14 @@ function NavBar() {
 
          {/* small Screen */}
          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1, flexGrow: 1, justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-          <Typography
-            variant="h5"
-            noWrap
-            component="div"
-            sx={{
-              mr: 2,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-             <Link to={'/'} style={{textDecoration: 'none', color: 'initial'}}>{name.toUpperCase()}</Link>
-          </Typography>
+          <Link to="/">
+              <CardMedia
+                  component="img"
+                  height="70"
+                  image={logo}
+                  alt="steele consulting"
+                />
+              </Link>
          </Box>
 
           {/* small screen menu */}

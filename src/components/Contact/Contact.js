@@ -10,17 +10,17 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import CustomizedButton from '../CustomizedButton/CustomizedButton'
-
+import HeaderTitle from '../HeaderTitle/HeaderTitle';
 
 
 const Contact = () => {
   const data = useDataCustomHook();
-  const {contact: {header}} = data;
+  const {contact: {header, btnName}} = data;
   
   return(
   <div className={styles.Contact}>
-      <Box sx={{ background: '#f4f9fb', p: 4, my: 4}}>
-      <Typography variant="h5"  sx={{pt: 2, textAlign: 'center'}}>{header}</Typography>
+      <Box sx={{ background: '#f4f9fb', p: 4}}>
+        <HeaderTitle>{header}</HeaderTitle>
         <Card sx={{m: 'auto', my: 5, maxWidth: 650,  }}>
           <CardContent>
               <form>
@@ -83,7 +83,7 @@ const Contact = () => {
                   {/* // <Button variant="contained" sx={{width: 250, fontWeight: 700}}>Submit</Button> */}
                   <CustomizedButton 
                     variant="contained" 
-                    label={'Search'} 
+                    label={btnName} 
                     backgroundColor={'#000000'} 
                     id="demo-customized-button"
                     // aria-controls={open ? 'demo-customized-menu' : undefined}

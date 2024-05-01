@@ -7,9 +7,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import HeaderTitle from '../HeaderTitle/HeaderTitle';
 
 const MediaIcon = (socialMedia) => socialMedia.map(el => 
-  <Button key={el.name} variant="text" startIcon={el.icon} href={el.path} sx={{textTransform: 'none',}}>
+  <Button key={el.path} variant="text" startIcon={el.icon} href={el.path} sx={{
+    textTransform: 'none', textAlign:'center'}}>
 {el.name}
 </Button>)
 
@@ -18,10 +20,9 @@ const About = () => {
   const {about: {about, header, socialMedia, image}} = data;
 
   return(
-  <div className={styles.About}>
-    <Box sx={{ my: 5, background: '#F7F2E9',}}>
-      <Typography variant="h5"  sx={{py: 4}}>{header}</Typography>
-
+  <Box className={styles.About} sx={{ my: 5, background: '#F7F2E9',}}>
+    <Box sx={{ py: 1}}>
+      <HeaderTitle>{header}</HeaderTitle>
       <Box sx={{background: '#F7F2E9',}}>
         <Box sx={{ flexGrow: 1, p: 2, display: {xs: 'none', md: 'block'}}}>
           <Grid 
@@ -34,7 +35,7 @@ const About = () => {
                 <Box sx={{}}>
                   <CardMedia
                     sx={{
-                      height: 200
+                      height: '100%'
                     }}
                     component="img"
                     image={image}
@@ -62,30 +63,37 @@ const About = () => {
         </Box>
 
         {/* Small devices */}
-        <Box sx={{display: {xs: 'block', md: 'none'}, p: 3, mb: 8, background: '#F7F2E9'}}>
-          <Box sx={{float: 'left', width: '50%', mr: 3}}>
+        <Box sx={{ p: 3, mb: 8, background: '#F7F2E9', display: {xs: 'block', md: 'none'}}}>
+          <Box sx={{ width: '100%', mr: 3, display: {xs: 'block', sm: 'none', md: 'none'}}}>
             <CardMedia
               component="img"
-              sx={{ width: '100%', mx: 1 }}
+              sx={{ width: '100%', mb: 2  }}
               image={image}
               alt="about-me"
             />
           </Box>
-          <Box>
-
-          <Typography component="div" variant="body2" gutterBottom sx={{mb: 3, textAlign: 'start'}}>
-            {about}
-          </Typography>
+          <Box sx={{float: 'left', width: '50%', mr: 3}}>
+            <CardMedia
+              component="img"
+              sx={{ width: '100%', mb: 2, display: {xs: 'none', sm: 'block', md: 'none'} }}
+              image={image}
+              alt="about-me"
+            />
           </Box>
-          <Box sx={{width: '100%'}}>
-            <Stack direction="row" spacing={2}>
-              {MediaIcon(socialMedia)}
-            </Stack>
+          <Box >
+            <Typography component="div" variant="body2" gutterBottom sx={{mb: 3, textAlign: 'start'}}>
+              {about}
+            </Typography>
+            <Box sx={{width: '100%'}}>
+              <Stack direction="row" spacing={2}>
+                {MediaIcon(socialMedia)}
+              </Stack>
+            </Box>
           </Box>
         </Box>
       </Box>
     </Box>
-  </div>
+  </Box>
 )};
 
 export default About;

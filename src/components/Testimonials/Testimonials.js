@@ -4,49 +4,34 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useDataCustomHook } from '../../Data/Data';
-import Box from '@mui/material/Box';
-import OwlCarousel from 'react-owl-carousel';  
-import 'owl.carousel/dist/assets/owl.carousel.css';  
-import 'owl.carousel/dist/assets/owl.theme.default.css';  
+import Box from '@mui/material/Box'; 
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
+import Grid from '@mui/material/Grid';
+import HeaderTitle from '../HeaderTitle/HeaderTitle';
+
 
 
 
 const Testimonials = () => {
   const data = useDataCustomHook();
-  const {testimonials: {testimonials, header,}} = data;
-  const options = {
-    loop: true,
-    center: true,
-    margin: 8,
-    autoplay: true,
-    dots: true,
-    autoplayTimeout: 8500,
-    smartSpeed: 450,
-    nav: false,
-    responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 2
-        },
-        1000: {
-            items: 3
-        }
-    }
-};
+  const {testimonials: {testimonials, header}} = data;
+
   return(
-  <div className={styles.Testimonials}>
+  <Box className={styles.Testimonials}>
     <Box sx={{ my: 5}}>
-      <Typography variant="h5"  sx={{py: 4}}>{header}</Typography>
-       <Box class='container-fluid'>            
-        <OwlCarousel items={3}  
-          className=" owl-carousel owl-theme"   
-          {...options}
-          >  
-          {testimonials.map((el) => <Card sx={{ width: '100%', background: '#fafafa' }}>
+      <HeaderTitle>{header}</HeaderTitle>
+
+          <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          {testimonials.map((el) => 
+            <Grid item xs={4} sm={8} md={6} key={el.name}>
+              <Card sx={{  
+                width: 350, m: 'auto', 
+                background: '#fafafa', 
+                height: '100%', 
+                mb: {xs:4, md: 'initial' }
+                }}>
               <CardContent>
                 <CardHeader
                     avatar={
@@ -55,15 +40,18 @@ const Testimonials = () => {
                     title={el.name}
                     subheader="September 14, 2016"
                   />
-                <Typography variant="body2" color="text.secondary" sx={{textAlign: 'start'}}>
-                  {el.testimony}
-                </Typography>
+                  <Box>
+                    <Typography variant="body2" color="text.secondary" sx={{textAlign: 'start'}}>
+                      {el.testimony}
+                    </Typography>
+                  </Box>
               </CardContent>
-              </Card>)}
-        </OwlCarousel>  
-        </Box>  
-    </Box>
-
-  </div>
+              </Card>
+                </Grid>
+              )}
+            </Grid>
+          </Box>
+    </Box>  
+  </Box>
 )};
 export default Testimonials;

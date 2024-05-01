@@ -7,6 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useDataCustomHook } from '../../Data/Data';
+import colors from '../../assets/colors/colors';
+import HeaderTitle from '../HeaderTitle/HeaderTitle';
 
 
 const Services = () => {
@@ -15,8 +17,9 @@ const Services = () => {
 
   return(
   <div className={styles.Services}>
-    <Box sx={{ flexGrow: 1, my: 5, p: 5, background:'#F7f2E9' }}>
-      <Typography gutterBottom variant="h5" component="div" sx={{my: 4}}>{header}</Typography>
+    <Box sx={{ flexGrow: 1, my: 5, p: 5, background: colors.primaryGrey200 }}>
+      {/* <Typography gutterBottom variant="h5" component="div" sx={{my: 4}}>{header}</Typography> */}
+      <HeaderTitle>{header}</HeaderTitle>
 
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {services.map((service, index) => (
