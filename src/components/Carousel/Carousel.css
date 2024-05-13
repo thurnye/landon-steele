@@ -1,0 +1,31 @@
+.owl-nav .owl-next{
+    position: absolute;
+    top: 200px;
+    right: 0;
+    
+}
+
+.owl-prev {
+    position: absolute;
+    top: 200px;
+    left: 0;
+}
+
+.owl-nav  span{
+    font-size: 40px;
+    text-align: center;
+    margin-top: -6px;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 42px;
+    background-color: #f49531;
+}
+
+.owl-theme .owl-dots {
+    text-align: end;
+}

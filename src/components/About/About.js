@@ -31,11 +31,11 @@ const About = () => {
           columns={{ xs: 12, sm: 12, md: 12 }} 
           sx={{ pb: 3}}
           >
-            <Grid item xs={6} sm={6} md={3} sx={{display: {xs: 'none', sm:'block'}}}>
-                <Box sx={{}}>
+            <Grid item xs={6} sm={6} md={4} sx={{display: {xs: 'none', sm:'block'}}}>
+                <Box sx={{pl: 3}}>
                   <CardMedia
                     sx={{
-                      height: '100%'
+                      height: '400px'
                     }}
                     component="img"
                     image={image}
@@ -43,8 +43,8 @@ const About = () => {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={12} sm={6} md={9} sx={{}}>
-                <Box sx={{height: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'column'}}>
+              <Grid item xs={12} sm={6} md={8} sx={{}}>
+                <Box sx={{pl: 3, pt:5, height: '100%', display: 'flex', justifyContent: 'flex-start', alignItems: 'center', flexDirection: 'column'}}>
                   <Box sx={{textAlign: 'center'}}>
                     <Typography  component="div" variant="caption" gutterBottom sx={{ mb: 2, px: 1, textAlign:'start'}}>
                       {about}
@@ -67,7 +67,7 @@ const About = () => {
           <Box sx={{ width: '100%', mr: 3, display: {xs: 'block', sm: 'none', md: 'none'}}}>
             <CardMedia
               component="img"
-              sx={{ width: '100%', mb: 2  }}
+              sx={{ height: '400px', mb: 2  }}
               image={image}
               alt="about-me"
             />
@@ -75,7 +75,7 @@ const About = () => {
           <Box sx={{float: 'left', width: '50%', mr: 3}}>
             <CardMedia
               component="img"
-              sx={{ width: '100%', mb: 2, display: {xs: 'none', sm: 'block', md: 'none'} }}
+              sx={{height: 400, width: '100%', mb: 2, display: {xs: 'none', sm: 'block', md: 'none'} }}
               image={image}
               alt="about-me"
             />

@@ -15,7 +15,7 @@ import FormHeader from '../HeaderTitle/FormHeader'
 
 const Contact = () => {
   const data = useDataCustomHook();
-  const {contact: {header, btnName, iamOptions, seriesOptions}} = data;
+  const {contact: {header, btnName, iamOptions}} = data;
   const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
@@ -50,7 +50,7 @@ const Contact = () => {
                   flexDirection: 'column',
                   mb: 4
                   }}>
-                  <FormHeader>Email</FormHeader>
+                  <FormHeader sx={{fontSize: 20}}>Email</FormHeader>
                   <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
                 </Box>
 
@@ -62,7 +62,7 @@ const Contact = () => {
                   flexDirection: 'column',
                   mb: 4
                   }}>
-                  <FormHeader>CellPhone</FormHeader>
+                  <FormHeader sx={{fontSize: 20}}>CellPhone</FormHeader>
                   <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
                 </Box>
 
@@ -74,7 +74,7 @@ const Contact = () => {
                   flexDirection: 'column',
                   my: 4
                   }}>
-                  <FormHeader>Company Name</FormHeader>
+                  <FormHeader sx={{fontSize: 20}}>Company Name</FormHeader>
                   <TextField fullWidth id="outlined-basic" variant="outlined" size="small"/>
                 </Box>
                 {/* I am a */}
@@ -85,7 +85,7 @@ const Contact = () => {
                   flexDirection: 'column',
                   my: 4
                   }}>
-                  <FormHeader>I am a</FormHeader>
+                  <FormHeader sx={{fontSize: 20}}>I am a</FormHeader>
                   <Select
                     labelId="I-am-a-select-label"
                     id="I-am-a-simple-select"
@@ -101,31 +101,7 @@ const Contact = () => {
                   </Select>
                 </Box>
 
-                {/* Series */}
-                <Box sx={{
-                  display: 'flex', 
-                  justifyContent: {xs: 'center', md: 'start'}, 
-                  alignItems: 'flex-start',
-                  flexDirection: 'column',
-                  my: 4
-                  }}>
-                  <FormHeader>Reaching out regarding a startup in series</FormHeader>
-                  <Select
-                    labelId="series-select-label"
-                    id="series-select"
-                    value={age}
-                    size={'small'}
-                    onChange={handleChange}
-                    sx={{
-                      flexGrow: 1,
-                      width: '100%'
-                    }}
-                  >
-                    {seriesOptions.map((el) => <MenuItem key={el} value={el.value}>{el.label}</MenuItem>)}
-                  </Select>
-                </Box>
-
-                {/* message */}
+                {/* Reason for reaching out */}
                 <Box sx={{
                   display: 'flex', 
                   justifyContent: {xs: 'center', md: 'start'}, 
@@ -133,7 +109,7 @@ const Contact = () => {
                   flexDirection: 'column',
                   mb: 4
                   }}>
-                  <FormHeader>Please describe your situation in details</FormHeader>
+                  <FormHeader sx={{fontSize: 20}}>Reason for reaching out (optional)</FormHeader>
                   <TextField 
                     fullWidth 
                     id="outlined-basic" 

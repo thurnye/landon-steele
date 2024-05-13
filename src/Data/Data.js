@@ -46,13 +46,13 @@ export const useDataCustomHook = () => {
           socialMedia: [
             {
               name: 'LinkedIn',
-              path: '',
+              path: 'https://www.linkedin.com/in/landonsteele/',
               icon: <FaLinkedin/>
             },
             {
               name: '',
-              path: '',
-              icon: <BsTwitterX color="black" fontSize={30}/>
+              path: 'https://twitter.com/steelegroup',
+              icon: <BsTwitterX color="black" fontSize={25}/>
             }
           ]
         },
@@ -80,6 +80,32 @@ export const useDataCustomHook = () => {
           header: 'TESTIMONIALS',
           max: 70,
           testimonials: [
+            {
+              name: ' Allison M',
+              image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODIwNDd8MHwxfHNlYXJjaHw4fHxyZWNpcGV8ZW58MHx8fHwxNzEzNzUxNDU4fDA&ixlib=rb-4.0.3&q=80&w=400',
+              testimony: 
+              `Landon played a pivotal role in the growth, scaling, and sale of my businesses.
+              
+              Serving as a rational and highly experienced sounding board, she was an invaluable problem-solver during numerous critical junctures. Landon consistently demonstrated her unwavering support and expertise, providing thought-provoking perspectives and guidance when I needed it most. Her extensive depth of insight and wealth of experience allowed her to seamlessly comprehend my unique challenges, steering me towards more informed and better outcomes. I am immensely grateful for her instrumental role in the success of my ventures`
+            },
+            {
+              name: 'Jennifer A',
+              image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODIwNDd8MHwxfHNlYXJjaHw4fHxyZWNpcGV8ZW58MHx8fHwxNzEzNzUxNDU4fDA&ixlib=rb-4.0.3&q=80&w=400',
+              testimony: `Landon has provided invaluable expertise and advice that has helped move our consulting business forward rapidly. She zoned in on the fact that we needed to clarify and simplify our market messaging in about 5 minutes. Her supportive and direct feedback helped us focus attention in the right direction and solve some of the gaps we had in how we articulate value to the market. In addition to her smarts, her kind nature makes it a real pleasure to spend time with her`
+            },
+            {
+              name: ' Allison M',
+              image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODIwNDd8MHwxfHNlYXJjaHw4fHxyZWNpcGV8ZW58MHx8fHwxNzEzNzUxNDU4fDA&ixlib=rb-4.0.3&q=80&w=400',
+              testimony: 
+              `Landon played a pivotal role in the growth, scaling, and sale of my businesses.
+              
+              Serving as a rational and highly experienced sounding board, she was an invaluable problem-solver during numerous critical junctures. Landon consistently demonstrated her unwavering support and expertise, providing thought-provoking perspectives and guidance when I needed it most. Her extensive depth of insight and wealth of experience allowed her to seamlessly comprehend my unique challenges, steering me towards more informed and better outcomes. I am immensely grateful for her instrumental role in the success of my ventures`
+            },
+            {
+              name: 'Jennifer A',
+              image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODIwNDd8MHwxfHNlYXJjaHw4fHxyZWNpcGV8ZW58MHx8fHwxNzEzNzUxNDU4fDA&ixlib=rb-4.0.3&q=80&w=400',
+              testimony: `Landon has provided invaluable expertise and advice that has helped move our consulting business forward rapidly. She zoned in on the fact that we needed to clarify and simplify our market messaging in about 5 minutes. Her supportive and direct feedback helped us focus attention in the right direction and solve some of the gaps we had in how we articulate value to the market. In addition to her smarts, her kind nature makes it a real pleasure to spend time with her`
+            },
             {
               name: ' Allison M',
               image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0ODIwNDd8MHwxfHNlYXJjaHw4fHxyZWNpcGV8ZW58MHx8fHwxNzEzNzUxNDU4fDA&ixlib=rb-4.0.3&q=80&w=400',
@@ -124,36 +150,6 @@ export const useDataCustomHook = () => {
               value: 'Other'
             },
           ],
-          seriesOptions: [
-            {
-              label: 'A',
-              value: 'A'
-            },
-            {
-              label: 'B',
-              value: 'B'
-            },
-            {
-              label: 'C',
-              value: 'C'
-            },
-            {
-              label: 'D',
-              value: 'D'
-            },
-            {
-              label: 'E',
-              value: 'E'
-            },
-            {
-              label: 'Pre-Seed',
-              value: 'Pre-Seed'
-            },
-            {
-              label: 'Other',
-              value: 'Other'
-            }
-          ]
         },
         noMatchPage: {
           header: "The Page You Requested Could Not Be Found",

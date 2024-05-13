@@ -4,58 +4,66 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useDataCustomHook } from '../../Data/Data';
-import Box from '@mui/material/Box'; 
+import Box from '@mui/material/Box';
 import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
 import HeaderTitle from '../HeaderTitle/HeaderTitle';
-import colors from '../../assets/colors/colors'
-
-
+import colors from '../../assets/colors/colors';
+import Carousel from '../Carousel/Carousel';
 
 const Testimonials = () => {
   const data = useDataCustomHook();
-  const {testimonials: {testimonials, header}} = data;
+  const {
+    testimonials: { testimonials, header },
+  } = data;
 
-  return(
-  <Box className={styles.Testimonials}>
-    <Box sx={{ my: 5}}>
-      <HeaderTitle>{header}</HeaderTitle>
-
-          <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-          {testimonials.map((el) => 
-            <Grid item xs={4} sm={8} md={6} key={el.name}>
-              <Card sx={{  
-                width: 350, m: 'auto', 
-                background: colors.primaryGrey200, 
-                height: '100%', 
-                mb: {xs:4, md: 'initial' }
-                }}>
-              <CardContent>
-                <CardHeader
-                    avatar={
-                      <Avatar alt={el.name} src={el.image}/>
-                    }
+  return (
+    <Box className={styles.Testimonials}>
+      <Box sx={{ my: 5 }}>
+        <HeaderTitle>{header}</HeaderTitle>
+        <Carousel>
+          {testimonials.map((el) => (
+            <Box
+              key={el.name}
+              sx={{
+                py: 3,
+              }}
+            >
+              <Card
+                sx={{
+                  width: 350,
+                  height: 400,
+                  m: 'auto',
+                  background: colors.primaryGrey200,
+                  mb: { xs: 4, md: 'initial' },
+                }}
+              >
+                <CardContent>
+                  <CardHeader
+                    avatar={<Avatar alt={el.name} src={el.image} />}
                     title={el.name}
                     // subheader="September 14, 2016"
                     sx={{
                       color: colors.accent500,
-                      fontFamily: 'fontFamily: `Barlow Condensed, sans-serif`,'
+                      fontFamily: 'fontFamily: `Barlow Condensed, sans-serif`,',
                     }}
                   />
                   <Box>
-                    <Typography variant="body2" color="text.secondary" sx={{textAlign: 'start'}}>
+                    <Typography
+                      variant='body2'
+                      color={colors.accent500}
+                      sx={{ textAlign: 'start' }}
+                    >
                       {el.testimony}
                     </Typography>
                   </Box>
-              </CardContent>
+                </CardContent>
               </Card>
-                </Grid>
-              )}
-            </Grid>
-          </Box>
-    </Box>  
-  </Box>
-)};
+            </Box>
+          ))}
+        </Carousel>
+      </Box>
+    </Box>
+  );
+};
 export default Testimonials;
