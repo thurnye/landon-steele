@@ -86,6 +86,7 @@ function NavBar() {
                   height="70"
                   image={logo}
                   alt="steele consulting"
+                  sx={{p: 1}}
                 />
               </Link>
          </Box>
